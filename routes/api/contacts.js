@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const contactsControllers = require("../../controllers/contacts");
-// const validate = require("../../validation/validation");
-// const validateId = require("../../validation/IdValidation");
 const validate = require('./validation')
 
 router.get("/", contactsControllers.getAll);
@@ -14,10 +12,6 @@ router.post("/", validate.createContact, contactsControllers.create);
 router.delete("/:id", contactsControllers.remove);
 
 router.patch(
-  "/:id",
-
-  validate.updateContact,
-  contactsControllers.update
-);
+  "/:id", validate.updateContact, contactsControllers.update);
 
 module.exports = router;

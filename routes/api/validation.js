@@ -9,7 +9,7 @@ const schemaCreateContact = Joi.object({
     .required(),
   subscription: Joi.string().optional(),
   password: Joi.string().optional(),
-  token: Joi.string().optional(),
+  token: Joi.string( ).optional(),
 })
 
 const schemaUpdateContact = Joi.object({
